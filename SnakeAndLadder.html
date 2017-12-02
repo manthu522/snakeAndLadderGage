@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Snake & Ladder Game</title>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/utility.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-6">
+            <canvas id="board" width="650" height="650">
+                <script type="text/javascript">
+                    //store the co-ordinates of all the squares.
+                    var squares = new Array();
+
+                    var canvas = document.getElementById("board");
+                    var context = canvas.getContext("2d");
+                    var contextText = canvas.getContext("2d");
+                    var squareSize = canvas.height / 10;
+                       
+                    var _currentPos = 0;
+                    var _currentPosP1 = 0;
+                    var _currentPosP2 = 0;
+
+                    RenderSquareBoard();
+                    RenderSnakeAndLadders();  
+                </script>
+            </canvas>        
+        </div>
+        <div class=' col-md-6 playerSection'>
+            <form>
+                <label class="radio-inline">
+                  <input type="radio" name="playes" checked="true" value="single">Single Player
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="playes" value="multiple">Multiple Players
+                </label>
+            </form>
+            <div class='singlePlayerSec'>
+                <div class="form-group">
+                    <input type="button" id="nextMove" value="Next Move" onclick="nextMove()" />
+                </div>
+                <div class="form-group">
+                    <input type="button" value="Start a new game" onclick="initGame()" />
+                </div>
+            </div>
+            <div class='multiPlayerSec' style="display:none;">
+                <div class="form-group">
+                    <input type="button" class='player' id="player1" value="Player1"/>
+                    <input type="button" class='player' id="player2" value="Player2" disabled="disabled" />
+                </div>
+                <div class="form-group">
+                    <input type="button" value="Start a new game" onclick="initGame()" />
+                </div>
+            </div>
+        <div>
+    </div>   
+</body>
+</html>

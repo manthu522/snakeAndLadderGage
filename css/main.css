@@ -1,0 +1,14 @@
+
+#board {
+	float: left;
+}
+.playerSection{
+    position: relative;
+    left: 82px;	
+}
+
+body{
+	overflow: hidden;
+	overflow-x: hidden;
+	width: 89%;
+}
